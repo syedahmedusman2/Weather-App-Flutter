@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:weatherapp/apikey.dart';
 
 var hello = "WORLD";
 
@@ -49,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var results;
   Future getWeather() async {
     Uri apiUrl = Uri.parse(
-        "http://api.openweathermap.org/data/2.5/weather?q=karachi&units=imperial&appid=$key");
+        "http://api.openweathermap.org/data/2.5/weather?q=karachi&units=imperial&appid=acbd2f858e9b066dd9f0732aeb60618a");
     http.Response response = await http.get(apiUrl);
     var results = jsonDecode(response.body);
     setState(() {
